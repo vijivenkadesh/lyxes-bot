@@ -1,8 +1,8 @@
-from core.config import EnvSettings
+from agents.lxyes_bot import LyxesBot
 def main():
-    settings = EnvSettings()
+    llm = LyxesBot.get_llm(openai_model="gpt-4.1-nano")
+    response = llm.invoke("Hello How are you")
+    print(response)
 
-    key = settings.OPENAI_API_KEY
-    print(settings.OPENAI_API_KEY)
 if __name__ == "__main__":
     main()
